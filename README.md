@@ -1,44 +1,16 @@
-<p align="center">
-<a href="https://bayudwiyansatria.github.io/Development-And-Operations/">
-<img src="https://cdn.bayudwiyansatria.com/assets/logo-full.png" width="100%" />
-</a>
-<br>
-</p>
-<p align="center">
-<a href="#">
-<img src="https://img.shields.io/badge/%20Platforms-Windows%20/%20Linux-blue.svg?style=flat-square" alt="Platforms" />
-</a>
-<a href="https://bayudwiyansatria.github.io/Development-And-Operations/blob/master/LICENSE">
-<img src="https://img.shields.io/badge/%20Licence-MIT-green.svg?style=flat-square" alt="license" />
-</a>
-</p>
-<p align="center">
-<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/CODE_OF_CONDUCT.md">
-<img src="https://img.shields.io/badge/Community-Code%20of%20Conduct-orange.svg?style=flat-squre" alt="Code of Conduct" />
-</a>
-<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/SUPPORT.md">
-<img src="https://img.shields.io/badge/Community-Support-red.svg?style=flat-square" alt="Support" />
-</a>
-<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/CONTRIBUTING.md">
-<img src="https://img.shields.io/badge/%20Community-Contribution-yellow.svg?style=flat-square" alt="Contribution" />
-</a>
-</p>
+![Platforms](https://img.shields.io/badge/%20Platforms-Windows%20/%20Linux-blue.svg?style=flat-square")
+[![License](https://img.shields.io/badge/%20Licence-MIT-green.svg?style=flat-square)](LICENSE.md)
+[![Code Of Conduct](https://img.shields.io/badge/Community-Code%20of%20Conduct-orange.svg?style=flat-squre)](CODE_OF_CONDUCT.md)
+[![Support](https://img.shields.io/badge/Community-Support-red.svg?style=flat-square)](SUPPORT.md)
+[![Contributing](https://img.shields.io/badge/%20Community-Contribution-yellow.svg?style=flat-square)](CONTRIBUTING.md)
+
 <hr>
 
-# Development and Operation
+# Terraform Docker
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-![Github Actions](https://github.com/bayudwiyansatria/Development-And-Operations/workflows/Github%20Action/badge.svg)
-
-Global Template Repository for Development and Operations Of Your Projects.
-
-| Key|Values|
-| ------| ----- |
-| Author| Bayu Dwiyan Satria |
-| Email | bayudwiyansatria@gmail.com |
-| Phone | +62-823-9602-9583 |
-| Website | [https://bayudwiyansatria.com](https://bayudwiyansatria.com) |
+Docker provisioner using terraform.
 
 ## Table of Contents
 
@@ -54,37 +26,23 @@ Global Template Repository for Development and Operations Of Your Projects.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
 
-What things you need to install the software and how to install them
-
-```shell
-apt-get -y install git
-```
-
-Or
+### Usage
 
 ```shell
-yum -y install git
+git clone https://github.com/bayudwiyansatria/terraform-docker.git
+terraform init
+terraform plan
+terraform apply
 ```
 
-### Installation
+### Variables
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be clone this repository.
-
-```shell
-git clone git@github.com:bayudwiyansatria/Development-And-Operations.git
-```
-
-## Development
-
--*Release 1.0* : **2019, Nov**.
-
-## Usage
-
-Reference and programming instructional materials.
+| Name | Default | Description | Required |
+| ---- | ------- | ----------- | -------- |
+| server_ips | `[]` | List String of Server IP addresses | true |
+| ssh_private_key | `~/.ssh/id_rsa` | SSH Private Key | true |
+| docker_version | `20.10.11` | Docker Version | true |
 
 ## Contributing
 
@@ -106,13 +64,13 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **[Bayu Dwiyan Satria](https://github.com/bayudwiyansatria)** - *Initial work*
+* **[Bayu Dwiyan Satria](https://github.com/bayudwiyansatria)**
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-<p> Copyright &copy; 2017 - 2019 Public Use. All Rights Reserved.
+<p> Copyright &copy; 2021 Public Use. All Rights Reserved.
 
 ## Acknowledgments
 
