@@ -41,6 +41,14 @@ resource "null_resource" "config" {
     ]
   }
 
+  # GH-1 kubelet is unhealthy due to a misconfiguration
+  # https://github.com/bayudwiyansatria/terraform-docker/issues/1
+  provisioner "remote-exec" {
+    inline = [
+      "systemctl restart docker"
+    ]
+  }
+
   depends_on = [
     null_resource.bootstrap
   ]
