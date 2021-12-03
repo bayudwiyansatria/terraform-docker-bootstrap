@@ -10,30 +10,40 @@
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-Docker provisioner using terraform.
+Docker provisioner using terraform. Installing docker engine on cloud or self-hosted on-premise infrastructure such as Bare Metal or Virtual Machine in various Hypervisor. 
 
-## Table of Contents
+## Requirements
 
-* [Dependencies](#dependencies)
-* [Prerequisites](#prerequisites)
-* [Installation](#installation)
-* [Development](#development)
-* [Usage](#usage)
-* [Contributing](#contributing)
-* [License](#license)
+| Name | Version |
+| ---- | ------- |
+| [Terraform](https://www.terraform.io/downloads.html) |  >= 1.0.11 |
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
+There are instructions under `demo` directory will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ### Usage
 
+Deploy on self-hosted VM
+
 ```shell
-git clone https://github.com/bayudwiyansatria/terraform-docker.git
-terraform init
-terraform plan
-terraform apply
+module "docker" {
+  source          = "bayudwiyansatria/bootstrap/docker"
+  server_ips      = var.server_ips
+  ssh_private_key = var.cluster_admin_ssh_access
+}
+```
+
+```shell
+module "docker" {
+  source          = "bayudwiyansatria/bootstrap/docker"
+  server_ips      = [
+		192.168.1.2,
+		192.168.1.3,
+		192.168.1.4
+	]
+  ssh_private_key = var.cluster_admin_ssh_access
+}
 ```
 
 ### Variables
@@ -64,16 +74,15 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **[Bayu Dwiyan Satria](https://github.com/bayudwiyansatria)**
+- [Bayu Dwiyan Satria](https://github.com/bayudwiyansatria)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-<p> Copyright &copy; 2021 Public Use. All Rights Reserved.
+<p> Copyright &copy; 2021. All Rights Reserved.
 
 ## Acknowledgments
 
 * Hat tip to anyone whose code was used
 * Inspiration
-* etc
